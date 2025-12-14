@@ -1,0 +1,40 @@
+name: Run Unit Tests
+
+on:
+  workflow_call:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.16
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install jest-junit
+        run: pnpm add -D jest-junit
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run tests with coverage and junit report
+        run: |
+          pnpm exec jest \
+            --coverage \
+            --reporters=default \
+            --reporters=jest-junit \
+            --outputFile=reports/test-results.xml
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            reports/test-results.xml
+            coverage/lcov.info

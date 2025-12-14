@@ -1,0 +1,98 @@
+name: Dev Deployment in Vercel
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  RUN_UNIT_TEST: "false"
+  RUN_SONARQUBE: 'true'
+
+jobs:
+  initialization:
+    runs-on: ubuntu-latest
+    outputs:
+      envvalue1: ${{ steps.setvar.outputs.envvar1 }}
+      envvalue2: ${{ steps.setvar.outputs.envvar2 }}
+    steps:
+      - name: set value
+        id: setvar
+        run: |
+          echo envvar1="$RUN_SONARQUBE" >> $GITHUB_OUTPUT
+          echo envvar2="$RUN_SONARQUBE" >> $GITHUB_OUTPUT
+
+  
+  test-job:
+    if: ${{ needs.initialization.outputs.envvalue1=='true' }}
+    uses: ./.github/workflows/1_test.yml
+    needs: [initialization]
+
+  sonarqube-job:
+    if: ${{ success() && needs.initialization.outputs.envvalue2=='true' }}
+    uses: ./.github/workflows/2_sonar.yml
+    secrets:
+      SELISE_GITHUB_PAT: ${{ secrets.SELISE_GITHUB_PAT }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_GLOBAL }}
+    needs: [test-job]
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [sonarqube-job]
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+  
+      - name: Setup Node version 22
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.16
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install vercel cli
+        run: npm i -g vercel
+
+      
+      - name: 🛠 Generate .vercel/project.json
+        run: |
+          mkdir -p .vercel
+          BRANCH_NAME=${GITHUB_REF##*/}
+
+          if [ "$BRANCH_NAME" = "dev" ]; then
+            PROJECT_ID="${{ secrets.VERCEL_PROJECT_ID_DEV }}"
+            BUILD_CMD="pnpm build:dev"
+          elif [ "$BRANCH_NAME" = "stage" ]; then
+            PROJECT_ID="${{ secrets.VERCEL_PROJECT_ID_STAGE }}"
+            BUILD_CMD="pnpm build:stage"
+          elif [ "$BRANCH_NAME" = "main" ]; then
+            PROJECT_ID="${{ secrets.VERCEL_PROJECT_ID_PROD }}"
+            BUILD_CMD="pnpm build:prod"
+          else
+            echo "❌ Unknown branch: $BRANCH_NAME"
+            exit 1
+          fi
+
+          cat <<EOF > .vercel/project.json
+          {
+            "projectId": "$PROJECT_ID",
+            "orgId": "${{ secrets.VERCEL_ORG_ID }}",
+            "settings": {
+              "framework": "nextjs",
+              "installCommand": "pnpm install",
+              "buildCommand": "$BUILD_CMD",
+              "nodeVersion": "22.x"
+            }
+          }
+          EOF
+            
+
+      - name: Build project with Vercel
+        run: vercel build --token $VERCEL_TOKEN
+
+      - name: 🚚 Deploy to Vercel
+        run: vercel deploy --prod --token $VERCEL_TOKEN      
+
+    

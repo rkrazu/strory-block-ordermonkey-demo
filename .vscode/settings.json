@@ -1,0 +1,15 @@
+{
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports.biome": "explicit",
+		"source.fixAll.biome": "explicit"
+	},
+	"editor.defaultFormatter": "biomejs.biome",
+	"sonarlint.connectedMode.project": {
+		"connectionId": "https-code-selise-biz-",
+		"projectKey": "SELISEdigitalplatforms_l3-next-innocard-corporatesite_69bec483-56ae-47a2-98ac-59e20ae0b5eb"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	}
+}
