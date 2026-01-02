@@ -16,6 +16,9 @@ const FooterItem = dynamic(
 const leftImageSection = dynamic(() => import("@/components/storyblok/leftImageSection"), {
 	ssr: true,
 });
+const rightImageSection = dynamic(() => import("@/components/storyblok/rightImageSection"), {
+	ssr: true,
+});
 const heroSection = dynamic(() => import("@/components/storyblok/heroSection"), {
 	ssr: true,
 });
@@ -46,6 +49,7 @@ const components = {
 	menu_item: SBMenuItem,
 	page: pageContent,
 	left_image_section: leftImageSection,
+	right_image_section: rightImageSection,
 	blog: Blog,
 	global: Global,
 };
