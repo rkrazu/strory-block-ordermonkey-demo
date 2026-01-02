@@ -151,6 +151,20 @@ export interface leftImageSection {
   [k: string]: unknown;
 }
 
+export interface rightImageSection {
+  image?: StoryblokAsset;
+  title?: StoryblokRichtext;
+  description?: StoryblokRichtext;
+  link?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text?: string;
+  component: "right_image_section";
+  _uid: string;
+  [k: string]: unknown;
+}
+
 export interface SubMenu {
 	title?: string;
 	link?: Exclude<
