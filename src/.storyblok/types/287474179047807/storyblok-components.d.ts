@@ -43,6 +43,7 @@ export interface Grid {
 		| Global
 		| Grid
 		| heroSection
+		| heroVideoSection
 		| Item
 		| Links
 		| Menu
@@ -50,6 +51,7 @@ export interface Grid {
 		| Page
 		| Robots
 		| leftImageSection
+		| rightImageSection
 		| SubMenu
 		| Teaser
 	)[];
@@ -67,7 +69,20 @@ export interface heroSection {
 	_uid: string;
 	[k: string]: unknown;
 }
-
+export interface heroVideoSection {
+  video_thumb?: StoryblokAsset;
+  video?: StoryblokAsset;
+  title?: StoryblokRichtext;
+  description?: StoryblokRichtext;
+  link?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text?: string;
+  component: "hero_video_section";
+  _uid: string;
+  [k: string]: unknown;
+}
 export interface Item {
 	text?: string;
 	component: "item";
@@ -141,6 +156,7 @@ export interface leftImageSection {
   image?: StoryblokAsset;
   title?: string;
   description?: StoryblokRichtext;
+  tags?: block[];
   link?: Exclude<
     StoryblokMultilink,
     { linktype?: "email" } | { linktype?: "asset" }

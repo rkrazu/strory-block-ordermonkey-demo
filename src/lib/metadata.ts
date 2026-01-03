@@ -21,7 +21,7 @@ export async function generateStoryblokMetadata({
 		process.env.NEXT_PUBLIC_ENV === "PRODUCTION";
 
 	const baseMetadata: Metadata = {
-		title: seoData?.title ?? "KRAAK",
+		title: seoData?.title ?? "ORDERMONKEY",
 		description: seoData?.description ?? "",
 		openGraph: {
 			title: seoData?.og_title ?? "",
@@ -42,10 +42,10 @@ export async function generateStoryblokMetadata({
 	// Add alternates for production domain
 	if (isProdDomain) {
 		baseMetadata.alternates = {
-			canonical: `https://kraak.ch/${lang}/${slug.toLowerCase()}`,
+			canonical: `https://ordermonkey.ch/${lang}/${slug.toLowerCase()}`,
 			languages: {
-				en: `https://kraak.ch/en/${slug.toLowerCase()}`,
-				de: `https://kraak.ch/de/${slug.toLowerCase()}`,
+				en: `https://ordermonkey.ch/en/${slug.toLowerCase()}`,
+				de: `https://ordermonkey.ch/de/${slug.toLowerCase()}`,
 			},
 		};
 	}
