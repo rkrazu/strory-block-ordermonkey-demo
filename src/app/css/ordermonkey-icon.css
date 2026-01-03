@@ -1,0 +1,223 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?d59pwc');
+    src: url('../fonts/icomoon.eot?d59pwc#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?d59pwc') format('truetype'), url('../fonts/icomoon.woff?d59pwc') format('woff'), url('../fonts/icomoon.svg?d59pwc#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+[class^="icon-"], [class*=" icon-"] {
+   /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+   /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-document-download:before {
+    content: "\e93c";
+}
+.icon-monitor:before {
+    content: "\e93a";
+}
+.icon-cloud-connection:before {
+    content: "\e93b";
+}
+.icon-mobile:before {
+    content: "\e943";
+}
+.icon-kiosk:before {
+    content: "\e941";
+}
+.icon-web-shop:before {
+    content: "\e942";
+}
+.icon-receipt:before {
+    content: "\e938";
+}
+.icon-like:before {
+    content: "\e939";
+}
+.icon-medal-star:before {
+    content: "\e93f";
+}
+.icon-tick-circle1:before {
+    content: "\e940";
+}
+.icon-data:before {
+    content: "\e934";
+}
+.icon-programming-arrow:before {
+    content: "\e935";
+}
+.icon-profile-tick:before {
+    content: "\e936";
+}
+.icon-presention-chart:before {
+    content: "\e937";
+}
+.icon-keyboard_arrow_right:before {
+    content: "\e933";
+}
+.icon-Customer-Service:before {
+    content: "\e932";
+}
+.icon-calendar-add:before {
+    content: "\e92e";
+    color: #fff;
+}
+.icon-chevron-down:before {
+    content: "\e92f";
+    color: #4b4b4b;
+}
+.icon-lifebuoy:before {
+    content: "\e930";
+    color: #fff;
+}
+.icon-whatsapp:before {
+    content: "\e931";
+    color: #fff;
+}
+.icon-discount-shape:before {
+    content: "\e92a";
+}
+.icon-card-pos:before {
+    content: "\e92b";
+}
+.icon-note:before {
+    content: "\e92c";
+}
+.icon-printer:before {
+    content: "\e92d";
+}
+.icon-phone-bold:before {
+    content: "\e928";
+}
+.icon-menu:before {
+    content: "\e929";
+}
+.icon-story:before {
+    content: "\e900";
+}
+.icon-gift:before {
+    content: "\e901";
+}
+.icon-diagram:before {
+    content: "\e902";
+}
+.icon-calculator:before {
+    content: "\e903";
+}
+.icon-flash-1:before {
+    content: "\e904";
+}
+.icon-shop:before {
+    content: "\e905";
+}
+.icon-element-2:before {
+    content: "\e906";
+}
+.icon-directbox-receive:before {
+    content: "\e907";
+}
+.icon-task:before {
+    content: "\e908";
+}
+.icon-gps:before {
+    content: "\e909";
+}
+.icon-setting-2:before {
+    content: "\e90a";
+}
+.icon-box-add:before {
+    content: "\e90b";
+}
+.icon-menu-board:before {
+    content: "\e90c";
+}
+.icon-card-tick:before {
+    content: "\e90d";
+}
+.icon-additem:before {
+    content: "\e90e";
+}
+.icon-notification:before {
+    content: "\e90f";
+}
+.icon-reserve:before {
+    content: "\e910";
+}
+.icon-close-circle:before {
+    content: "\e911";
+}
+.icon-tick-circle:before {
+    content: "\e912";
+}
+.icon-global:before {
+    content: "\e913";
+}
+.icon-chart:before {
+    content: "\e914";
+}
+.icon-shopping-cart:before {
+    content: "\e915";
+}
+.icon-colorfilter:before {
+    content: "\e916";
+}
+.icon-security-card:before {
+    content: "\e917";
+}
+.icon-close:before {
+    content: "\e918";
+}
+.icon-sms:before {
+    content: "\e919";
+}
+.icon-call:before {
+    content: "\e91a";
+}
+.icon-verify:before {
+    content: "\e91b";
+}
+.icon-people:before {
+    content: "\e91c";
+}
+.icon-security-time:before {
+    content: "\e91d";
+}
+.icon-flash:before {
+    content: "\e91e";
+}
+.icon-mouse-circle:before {
+    content: "\e91f";
+}
+.icon-candle-2:before {
+    content: "\e920";
+}
+.icon-Polygon-1:before {
+    content: "\e921";
+}
+.icon-facebook:before {
+    content: "\e922";
+}
+.icon-linkedin:before {
+    content: "\e923";
+}
+.icon-instagram:before {
+    content: "\e924";
+}
+.icon-south:before {
+    content: "\e925";
+}
+.icon-arrow_forward:before {
+    content: "\e926";
+}
+.icon-arrow_back:before {
+    content: "\e927";
+}

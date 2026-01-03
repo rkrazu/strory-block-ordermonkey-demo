@@ -8,16 +8,47 @@ import type { heroSection as heroSectionType } from "@/.storyblok/types/28747417
 
 const heroSection = ({ blok }: { blok: heroSectionType }) => {
 	return (
-		<section
+		<div
 			{...storyblokEditable(blok as SbBlokData)}
-			className="px-20 py-40 h-screen bg-cover bg-center bg-no-repeat sm:mt-20 mt-10"
-			style={{ backgroundImage: `url(${blok?.bg_image?.filename || ""})` }}
+			className="wp-block-create-block-ordermonkey-discount"
+		>
+			<section
+				className="bg-cover bg-no-repeat bg-center flex items-center h-[400px] md:h-[982px] lg:h-screen overlay-20"
+				style={{
+					backgroundImage: `url(${blok?.bg_image?.filename})`,
+				}}
 			>
-				<h1 className="text-left mb-5 text-9xl leading-[150px] font-extrabold text-white">{blok?.title}</h1>
-				<div className="richtext text-left text-6xl leading-12 font-extrabold text-white">
-					{parse(renderRichText(blok?.description) ?? "")}
+				<div className="main__container w-full">
+					<div
+						className="min-w-[60%] md:max-w-[80%] lg:max-w-[60%] text-whiteColor slide__up relative z-[1] animate-slide-up"
+						style={{ opacity: 0, transform: "translateY(300px)" }}
+					>
+						<img
+							decoding="async"
+							src="/spark-red.svg"
+							title="Spark Graphic"
+							alt="Spark Graphic"
+						/>
+						{blok?.title && (
+							<h2
+								className="text-[64px] leading-16 md:text-[82px] lg:text-[128px] lg:leading-[128px] font-Grauna tracking-[1px] my-2 md:my-4"
+								style={{ textShadow: "0px 25px 50px rgba(0, 0, 0, 0.25)" }}
+							>
+								{blok.title}
+							</h2>
+						)}
+						{blok?.description && (
+							<div
+								className="text-20 leading-26 tracking-[0.2px] md:font-Grauna md:text-56 md:leading-[56px] md:tracking-[1.2px]"
+								style={{ textShadow: "0px 25px 50px rgba(0, 0, 0, 0.25)" }}
+							>
+								{parse(renderRichText(blok.description) ?? "")}
+							</div>
+						)}
+					</div>
 				</div>
 			</section>
-		);
+		</div>
+	);
 };
 export default heroSection;
