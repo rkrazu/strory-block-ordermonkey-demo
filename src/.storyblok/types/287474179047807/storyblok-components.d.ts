@@ -83,6 +83,14 @@ export interface heroVideoSection {
   _uid: string;
   [k: string]: unknown;
 }
+export interface orderMonkeyVideoSection {
+  video_thumb?: StoryblokAsset;
+  video?: StoryblokAsset;
+  title?: StoryblokRichtext;
+  component: "ordermonkey_video_section";
+  _uid: string;
+  [k: string]: unknown;
+}
 export interface Item {
 	text?: string;
 	component: "item";
@@ -156,7 +164,6 @@ export interface leftImageSection {
   image?: StoryblokAsset;
   title?: string;
   description?: StoryblokRichtext;
-  tags?: block[];
   link?: Exclude<
     StoryblokMultilink,
     { linktype?: "email" } | { linktype?: "asset" }
@@ -177,6 +184,27 @@ export interface rightImageSection {
   >;
   link_text?: string;
   component: "right_image_section";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface smartOrderingSection {
+  bg_image?: StoryblokAsset;
+  thumbnail?: StoryblokAsset;
+  image?: StoryblokAsset;
+  title?: StoryblokRichtext;
+  description?: StoryblokRichtext;
+  link?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text?: string;
+  link_2?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text_2?: string;
+  component: "smart_ordering_section";
   _uid: string;
   [k: string]: unknown;
 }
