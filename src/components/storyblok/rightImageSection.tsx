@@ -38,18 +38,14 @@ const RightImageSection = ({ blok }: { blok: RightImageSectionType }) => {
 						)}
 
 						<ul className="md:flex md:flex-col lg:flex-row gap-2 lg:gap-6 md:mb-3 lg:mb-12">
-							<li className="animate-slide-from-right">
-								<div className="py-3 px-5 inline-flex items-center gap-3 bg-shade3 rounded-full secondary__details font-bold">
-									<span className="icon-security-time text-primaryColor text-[28px]"></span>
-									Reduce Long Queue
-								</div>
-							</li>
-							<li className="animate-slide-from-left">
-								<div className="py-3 px-5 inline-flex items-center gap-3 bg-shade3 rounded-full secondary__details font-bold">
-									<span className="icon-people text-primaryColor text-[28px]"></span>
-									Better Management
-								</div>
-							</li>
+							{blok.tags?.map((item, index) => (
+								<li key={index} className="animate-slide-from-right">
+									<div className="py-3 px-5 inline-flex items-center gap-3 bg-shade3 rounded-full secondary__details font-bold">
+										<span className="icon-security-time text-primaryColor text-[28px]"></span>
+										{item.text}
+									</div>
+								</li>
+							))}
 						</ul>
 
 						{blok.link?.url && blok.link_text && (
@@ -86,7 +82,7 @@ const RightImageSection = ({ blok }: { blok: RightImageSectionType }) => {
 						{/* Desktop Badge */}
 						<div className="secondary__details text-center text-whiteColor bg-[rgba(0,0,0,0.64)] py-2 px-4 absolute bottom-8 left-8 items-center gap-[6px] rounded-full hidden md:flex">
 							<span className="icon-verify text-primaryColor text-[24px] mt-[6px]"></span>
-							<span>Trusted by leading restaurants</span>
+							<span>{blok.image_caption}</span>
 						</div>
 
 						{/* Mobile Title & Badge */}
@@ -101,7 +97,7 @@ const RightImageSection = ({ blok }: { blok: RightImageSectionType }) => {
 							)}
 							<div className="secondary__details text-whiteColor flex items-center gap-2">
 								<span className="icon-verify text-primaryColor text-[24px] mt-[6px]"></span>
-								<span>Trusted by leading restaurants</span>
+								<span>{blok.image_caption}</span>
 							</div>
 						</div>
 					</figure>

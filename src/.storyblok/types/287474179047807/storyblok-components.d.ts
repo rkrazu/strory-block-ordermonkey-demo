@@ -97,7 +97,14 @@ export interface Item {
 	_uid: string;
 	[k: string]: unknown;
 }
-
+export interface Card {
+	image?: StoryblokAsset;
+	title?: string;
+	description?: string;
+	component: "card";
+	_uid: string;
+	[k: string]: unknown;
+}
 export interface Links {
 	text?: string;
 	link?: Exclude<
@@ -162,6 +169,7 @@ export interface Robots {
 
 export interface leftImageSection {
   image?: StoryblokAsset;
+  image_caption?: string;
   title?: string;
   description?: StoryblokRichtext;
   link?: Exclude<
@@ -169,6 +177,7 @@ export interface leftImageSection {
     { linktype?: "email" } | { linktype?: "asset" }
   >;
   link_text?: string;
+  tags?: Item[];
   component: "left_image_section";
   _uid: string;
   [k: string]: unknown;
@@ -176,6 +185,7 @@ export interface leftImageSection {
 
 export interface rightImageSection {
   image?: StoryblokAsset;
+  image_caption?: string;
   title?: StoryblokRichtext;
   description?: StoryblokRichtext;
   link?: Exclude<
@@ -183,6 +193,7 @@ export interface rightImageSection {
     { linktype?: "email" } | { linktype?: "asset" }
   >;
   link_text?: string;
+  tags?: Item[];
   component: "right_image_section";
   _uid: string;
   [k: string]: unknown;
@@ -205,6 +216,15 @@ export interface smartOrderingSection {
   >;
   link_text_2?: string;
   component: "smart_ordering_section";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ordermonkeyEcosystemSection {
+  title?: string;
+  title_2?: string;
+  cards?: Card[];
+  component: "ordermonkey_ecosystem_section";
   _uid: string;
   [k: string]: unknown;
 }
