@@ -24,6 +24,15 @@ const heroVideoSection = dynamic(() => import("@/components/storyblok/heroVideoS
 const rightImageSection = dynamic(() => import("@/components/storyblok/rightImageSection"), {
 	ssr: true,
 });
+
+const smartOrderingSection = dynamic(() => import("@/components/storyblok/smartOrderingSection"), {
+	ssr: true,
+});
+
+const orderMonkeyVideoSection = dynamic(() => import("@/components/storyblok/orderMonkeyVideoSection"), {
+	ssr: true,
+});
+
 const heroSection = dynamic(() => import("@/components/storyblok/heroSection"), {
 	ssr: true,
 });
@@ -56,6 +65,8 @@ const components = {
 	page: pageContent,
 	left_image_section: leftImageSection,
 	right_image_section: rightImageSection,
+	smart_ordering_section: smartOrderingSection,
+	ordermonkey_video_section: orderMonkeyVideoSection,
 	blog: Blog,
 	global: Global,
 };
