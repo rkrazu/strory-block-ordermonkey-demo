@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { i18n, type Locale } from "@/i18n/i18n-config";
 import { getStory } from "@/lib/fetchers/storyblok-fetcher";
 import "../globals.css";
+import Script from "next/script";
 const Header = dynamic(() => import("@/components/section/Header"));
 const Footer = dynamic(() => import("@/components/section/Footer"));
 
@@ -98,6 +99,18 @@ export default async function PageLayout({
           strategy="lazyOnload"
           defer
         /> */}
+				{/* Global Scripts */}
+				<Script src="/js/gsap.min.js" strategy="afterInteractive" />
+				<Script src="/js/ScrollTrigger.min.js" strategy="afterInteractive" />
+				<Script src="/js/ScrollToPlugin.min.js" strategy="afterInteractive" />
+				<Script src="/js/Observer.min.js" strategy="afterInteractive" />
+				<Script src="/js/swiper-bundle.min.js" strategy="afterInteractive" />
+				<Script src="/js/responsive-background.js" strategy="afterInteractive" />
+        <Script src="/js/navigation.js" strategy="afterInteractive" />
+        <Script src="/js/ordermonkey-icon.js" strategy="afterInteractive" />
+        {/* <Script src="/js/fit-screen.js" strategy="afterInteractive" /> */}
+        <Script src="/js/custom.js" strategy="afterInteractive" />
+        {/* <Script src="/js/customizer.js" strategy="afterInteractive" /> */}
 			</head>
 
 			<body>

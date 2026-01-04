@@ -37,7 +37,7 @@ const LeftImageSection = ({ blok }: { blok: LeftImageSectionType }) => {
 						{/* Static Badge - Desktop */}
 						<div className="secondary__details text-center text-whiteColor bg-[rgba(0,0,0,0.64)] py-2 px-4 absolute bottom-8 left-8 items-center gap-[6px] rounded-full hidden md:flex">
 							<span className="icon-flash text-primaryColor text-[24px] mt-[6px]"></span>
-							<span>Stronger customer engagement with every visit</span>
+							<span>{blok.image_caption}</span>
 						</div>
 						{/* Mobile Title & Badge */}
 						<div className="block md:hidden py-8 px-5 bg-blackColor text-whiteColor rounded-b-xl mt-[-16px]">
@@ -46,7 +46,7 @@ const LeftImageSection = ({ blok }: { blok: LeftImageSectionType }) => {
 							)}
 							<div className="secondary__details text-whiteColor flex items-center gap-2">
 								<span className="icon-flash text-primaryColor w-6 h-6 mt-[6px]"></span>
-								<span>Stronger customer engagement with every visit</span>
+								<span>{blok.image_caption}</span>
 							</div>
 						</div>
 					</figure>
@@ -74,18 +74,16 @@ const LeftImageSection = ({ blok }: { blok: LeftImageSectionType }) => {
 
 						{/* Hardcoded List Items */}
 						<ul className="md:flex md:flex-col lg:flex-row gap-2 lg:gap-6 md:mb-3 lg:mb-12">
-							<li className="animate-slide-from-right">
-								<div className="py-3 px-5 inline-flex items-center gap-3 bg-shade3 rounded-full secondary__details font-bold">
-									<span className="icon-candle-2 text-primaryColor text-[28px]"></span>
-									Greater guest loyalty
-								</div>
-							</li>
-							<li className="animate-slide-from-left">
-								<div className="py-3 px-5 inline-flex items-center gap-3 bg-shade3 rounded-full secondary__details font-bold">
-									<span className="icon-mouse-circle text-primaryColor text-[28px]"></span>
-									Better usability
-								</div>
-							</li>
+							{
+							blok.tags?.map((item, index) => (
+								
+								<li key={index} className="animate-slide-from-right">
+									<div className="py-3 px-5 inline-flex items-center gap-3 bg-shade3 rounded-full secondary__details font-bold">
+										<span className="icon-candle-2 text-primaryColor text-[28px]"></span>
+										{item.text}
+									</div>
+								</li>
+							))}
 						</ul>
 
 						{blok.link?.url && blok.link_text && (

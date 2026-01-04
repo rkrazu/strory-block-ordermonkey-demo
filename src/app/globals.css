@@ -1,5 +1,6 @@
 @import "./css/fonts.css";
 @import "./css/ordermonkey-icon.css";
+@import "./css/swiper-bundle.min.css";
 @import "tailwindcss";
 @plugin "tailwindcss-animated";
 
