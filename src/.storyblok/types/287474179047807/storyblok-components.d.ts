@@ -229,6 +229,47 @@ export interface ordermonkeyEcosystemSection {
   [k: string]: unknown;
 }
 
+export interface ordermonkeyDeviceSection {
+  title?: string;
+  cards?: Card[];
+  component: "ordermonkey_device_section";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ordermonkeyCustomerSection {
+  title?: string;
+  cards?: Card[];
+  component: "ordermonkey_customer_section";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ordermonkeyPartnerSection {
+  title?: string;
+  sub_title?: string;
+  cards?: Card[];
+  sub_title_2?: string;
+  cards_2?: Card[];
+  component: "ordermonkey_partner_section";
+  _uid: string;
+  [k: string]: unknown;
+}
+
+export interface ordermonkeyFaqSection {
+  title?: string;
+  sub_title?: string;
+  cards?: Card[];
+  link?: Exclude<
+    StoryblokMultilink,
+    { linktype?: "email" } | { linktype?: "asset" }
+  >;
+  link_text?: string;
+  component: "ordermonkey_faq_section";
+  _uid: string;
+  [k: string]: unknown;
+}
+
 export interface SubMenu {
 	title?: string;
 	link?: Exclude<
