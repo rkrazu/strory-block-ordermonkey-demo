@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { i18n } from "@/i18n/i18n-config";
 
-const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
+const Header = ({ burger_menu , header_button}: { burger_menu?: Menu[] , header_button?: string }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const pathname = usePathname();
 
@@ -34,16 +34,46 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 					</figure>
 
 					<div className="menu__part">
-						<ul className="relative flex items-center gap-5">
-							{burger_menu?.[0]?.items?.map((item) => (
-								<li key={item._uid} className="menu-item">
-									<Link href={"/"} title={item.title}>
-										{item.title}
-									</Link>
-								</li>
-							))}
-						</ul>
-					</div>
+                        <ul className="relative flex items-center gap-5">
+                            {burger_menu?.map((item) => {
+                                if (item.component === "menu") {
+                                    return item.items?.map((menuItem) => {
+                                        const hasSubItems = menuItem.SubItems && menuItem.SubItems.length > 0;
+
+                                        if (hasSubItems) {
+                                            return (
+                                                <li key={menuItem._uid} className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children relative main__dropdown pr-3">
+                                                    <button className="drop__btn arrow--down" title={menuItem.title}>
+                                                        {menuItem.title}
+                                                    </button>
+                                                    <ul className="dropdown__list">
+                                                        {menuItem.SubItems?.map((sub) => (
+                                                            <li key={sub._uid} className="menu-item menu-item-type-post_type menu-item-object-page">
+                                                                <Link href={"/"} title={sub.title}>
+                                                                    <span className="icon-arrow_forward"></span>
+                                                                    <span className="nav__text">{sub.title}</span>
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </li>
+                                            );
+                                        }
+
+                                        return (
+                                            <li key={menuItem._uid} className="menu-item">
+                                                <Link href={"/"} title={menuItem.title}>
+                                                    {menuItem.title}
+                                                </Link>
+                                            </li>
+                                        );
+                                    });
+                                }
+                                return null;
+                            })}
+                        </ul>
+                    </div>
+
 
 					<div className="options__part">
 						<div className="social__media">
@@ -75,7 +105,7 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 							<ul className="flex items-center gap-3">
 								<li>
 									<button className="startJourneyOpen secondary__btn" title="Get in Touch">
-										Get in Touch
+										{header_button}
 									</button>
 								</li>
 							</ul>

@@ -129,7 +129,7 @@ export default async function PageLayout({
 					<StoryblokProvider>
 						<ThemeProvider attribute="class" defaultTheme="light" enableSystem>
 							<main className="">
-								<Header burger_menu={globalStory?.burger_menu} />
+								<Header burger_menu={globalStory?.burger_menu} header_button={globalStory?.header_button} />
 
 								{children}
 								{/* footer */}

@@ -35,6 +35,7 @@ export interface FooterItem {
 export interface Global {
   burger_menu?: Menu[];
   footer?: FooterItem[];
+  header_button?: string;
   component: "global";
   _uid: string;
   [k: string]: unknown;
