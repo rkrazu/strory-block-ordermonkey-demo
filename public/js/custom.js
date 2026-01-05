@@ -137,21 +137,121 @@
 		// Initialize scroll animations
 		initScrollAnimations();
 
-		// Initialize Swiper
-		if (typeof Swiper !== 'undefined') {
-			new Swiper(".card__slider", {
-				slidesPerView: 1,
-				spaceBetween: 30,
-				autoplay: {
-					delay: 2500,
-					disableOnInteraction: false,
-				},
-				loop: true,
-				pagination: {
-					el: ".swiper-pagination",
-					clickable: true,
+		// FAQ Accordion functionality
+		const accordionHeaders = document.querySelectorAll('.accordion__header');
+		accordionHeaders.forEach(header => {
+			header.addEventListener('click', () => {
+				const item = header.parentElement;
+				const content = header.nextElementSibling;
+				const icon = header.querySelector('.icon-chevron-down') || header.querySelector('span');
+
+				// Close other items
+				document.querySelectorAll('.accordion__item').forEach(otherItem => {
+					if (otherItem !== item) {
+						otherItem.querySelector('.accordion__content').style.maxHeight = '0';
+						otherItem.querySelector('.accordion__content').style.opacity = '0';
+						const otherIcon = otherItem.querySelector('.icon-chevron-down') || otherItem.querySelector('span');
+						if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+					}
+				});
+
+				// Toggle current item
+				if (content.style.maxHeight === '0px' || content.style.maxHeight === '') {
+					content.style.maxHeight = content.scrollHeight + 'px';
+					content.style.opacity = '1';
+					if (icon) icon.style.transform = 'rotate(180deg)';
+				} else {
+					content.style.maxHeight = '0';
+					content.style.opacity = '0';
+					if (icon) icon.style.transform = 'rotate(0deg)';
 				}
 			});
+		});
+
+		// Initialize Swiper
+		if (typeof Swiper !== 'undefined') {
+			// Card Slider
+			if (document.querySelector(".card__slider")) {
+				new Swiper(".card__slider", {
+					slidesPerView: 1,
+					spaceBetween: 30,
+					autoplay: {
+						delay: 2500,
+						disableOnInteraction: false,
+					},
+					loop: true,
+					pagination: {
+						el: ".swiper-pagination",
+						clickable: true,
+					}
+				});
+			}
+
+			// Ecosystem Slider (Device Section)
+			if (document.querySelector(".ecosystem__slider")) {
+				new Swiper(".ecosystem__slider", {
+					slidesPerView: 1,
+					spaceBetween: 30,
+					autoplay: {
+						delay: 3000,
+						disableOnInteraction: false,
+					},
+					loop: true,
+					pagination: {
+						el: ".swiper-pagination",
+						clickable: true,
+					}
+				});
+			}
+
+			// Logo Slider (Customer Section)
+			if (document.querySelector(".logo__slider")) {
+				new Swiper(".logo__slider", {
+					slidesPerView: 'auto',
+					spaceBetween: 30,
+					speed: 5000,
+					autoplay: {
+						delay: 0,
+						disableOnInteraction: false,
+					},
+					loop: true,
+					freeMode: {
+						enabled: true,
+						momentum: false,
+					},
+					allowTouchMove: false,
+					resistance: false,
+					resistanceRatio: 0,
+					breakpoints: {
+						320: {
+							slidesPerView: 2,
+							spaceBetween: 10
+						},
+						768: {
+							slidesPerView: 5,
+							spaceBetween: 15
+						}
+					},
+				});
+			}
+
+			// Partner Slider (Partner Section Mobile)
+			if (document.querySelector(".partner__slider")) {
+				new Swiper(".partner__slider", {
+					spaceBetween: 0,
+					centeredSlides: true,
+					speed: 2000,
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+					breakpoints: {
+						320: {
+							slidesPerView: 1
+						}
+					}
+				});
+			}
 		} else {
 			console.error("Swiper is not defined. Check if swiper-bundle.min.js is loading correctly.");
 		}

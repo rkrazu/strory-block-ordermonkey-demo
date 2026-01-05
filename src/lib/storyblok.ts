@@ -41,6 +41,22 @@ const ordermonkeyEcosystemSection = dynamic(() => import("@/components/storyblok
 	ssr: true,
 });
 
+const ordermonkeyDeviceSection = dynamic(() => import("@/components/storyblok/ordermonkeyDeviceSection"), {
+	ssr: true,
+});
+
+const ordermonkeyCustomerSection = dynamic(() => import("@/components/storyblok/ordermonkeyCustomerSection"), {
+	ssr: true,
+});
+
+const ordermonkeyPartnerSection = dynamic(() => import("@/components/storyblok/ordermonkeyPartnerSection"), {
+	ssr: true,
+});
+
+const ordermonkeyFaqSection = dynamic(() => import("@/components/storyblok/ordermonkeyFaqSection"), {
+	ssr: true,
+});
+
 const Links = dynamic(() => import("@/components/storyblok/links"), {
 	ssr: true,
 });
@@ -72,6 +88,10 @@ const components = {
 	smart_ordering_section: smartOrderingSection,
 	ordermonkey_video_section: orderMonkeyVideoSection,
 	ordermonkey_ecosystem_section: ordermonkeyEcosystemSection,
+	ordermonkey_device_section: ordermonkeyDeviceSection,
+	ordermonkey_customer_section: ordermonkeyCustomerSection,
+	ordermonkey_partner_section: ordermonkeyPartnerSection,
+	ordermonkey_faq_section: ordermonkeyFaqSection,
 	blog: Blog,
 	global: Global,
 };
