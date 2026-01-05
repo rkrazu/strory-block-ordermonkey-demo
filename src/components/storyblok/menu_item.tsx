@@ -1,5 +1,5 @@
 import { type SbBlokData, storyblokEditable } from "@storyblok/react/rsc";
-import type { MenuItem } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { MenuItem } from "@/.storyblok/types/288385466767815/storyblok-components";
 import { Link } from "@/i18n/navigation";
 
 const SBMenuItem = ({ blok }: { blok: MenuItem }) => {

@@ -4,7 +4,7 @@ import {
 	storyblokEditable,
 } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
-import type { heroVideoSection as HeroVideoSectionType } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { heroVideoSection as HeroVideoSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const HeroVideoSection = ({ blok }: { blok: HeroVideoSectionType }) => {
 	return (

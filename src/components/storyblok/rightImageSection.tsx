@@ -4,7 +4,7 @@ import {
 	storyblokEditable,
 } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
-import type { rightImageSection as RightImageSectionType } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { rightImageSection as RightImageSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const RightImageSection = ({ blok }: { blok: RightImageSectionType }) => {
 	return (

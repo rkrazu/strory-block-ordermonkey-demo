@@ -1,4 +1,4 @@
-import type { FooterItem } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { FooterItem } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const Footer = ({ blok }: { blok?: FooterItem[] }) => {
 	return (

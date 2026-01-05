@@ -1,6 +1,6 @@
 "use client";
 
-import type { Menu } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { Menu } from "@/.storyblok/types/288385466767815/storyblok-components";
 import { useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { i18n } from "@/i18n/i18n-config";
@@ -8,7 +8,7 @@ import { i18n } from "@/i18n/i18n-config";
 const Header = ({ burger_menu , header_button}: { burger_menu?: Menu[] , header_button?: string }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const pathname = usePathname();
-
+// console.log(logo);
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 	return (
 		<header>

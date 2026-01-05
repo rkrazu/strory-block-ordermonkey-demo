@@ -3,7 +3,7 @@ import {
 	StoryblokServerComponent,
 	storyblokEditable,
 } from "@storyblok/react/rsc";
-import type { FooterItem as FooterLeftStoryblok } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { FooterItem as FooterLeftStoryblok } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const FooterItem = ({ blok }: { blok: FooterLeftStoryblok }) => {
 	return (

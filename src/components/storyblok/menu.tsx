@@ -3,7 +3,7 @@ import {
 	StoryblokServerComponent,
 	storyblokEditable,
 } from "@storyblok/react/rsc";
-import type { Menu } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { Menu } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const SBMenu = ({ blok }: { blok: Menu }) => {
 	return (

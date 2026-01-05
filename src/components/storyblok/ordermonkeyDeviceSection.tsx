@@ -2,7 +2,7 @@ import {
 	type SbBlokData,
 	storyblokEditable,
 } from "@storyblok/react/rsc";
-import type { ordermonkeyDeviceSection as OrdermonkeyDeviceSectionType } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { ordermonkeyDeviceSection as OrdermonkeyDeviceSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const OrdermonkeyDeviceSection = ({
 	blok,

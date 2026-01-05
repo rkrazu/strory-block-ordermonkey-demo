@@ -2,7 +2,7 @@ import {
 	type SbBlokData,
 	storyblokEditable,
 } from "@storyblok/react/rsc";
-import type { ordermonkeyFaqSection as OrdermonkeyFaqSectionType } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { ordermonkeyFaqSection as OrdermonkeyFaqSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 import { Link } from "@/i18n/navigation";
 
 const OrdermonkeyFaqSection = ({

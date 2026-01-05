@@ -4,9 +4,9 @@ import {
 	storyblokEditable,
 } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
-import type { heroSection as heroSectionType } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { HeroSection as HeroSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
-const heroSection = ({ blok }: { blok: heroSectionType }) => {
+const HeroSection = ({ blok }: { blok: HeroSectionType }) => {
 	return (
 		<div
 			{...storyblokEditable(blok as SbBlokData)}
@@ -51,4 +51,4 @@ const heroSection = ({ blok }: { blok: heroSectionType }) => {
 		</div>
 	);
 };
-export default heroSection;
+export default HeroSection;

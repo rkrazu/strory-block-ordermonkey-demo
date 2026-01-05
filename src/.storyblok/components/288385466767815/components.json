@@ -161,7 +161,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-11-09T10:21:42.179Z",
-    "updated_at": "2026-01-05T21:11:09.198Z",
+    "updated_at": "2026-01-05T21:41:24.788Z",
     "id": 110567842531291,
     "schema": {
       "burger_menu": {
@@ -193,6 +193,11 @@
         "pos": 2,
         "id": "u3RH1NWaQqyIwRw7OhmCCw",
         "translatable": true
+      },
+      "logo": {
+        "type": "multiasset",
+        "pos": 3,
+        "id": "QlJgaBlyQ8up80eUl_-Hig"
       }
     },
     "image": null,
