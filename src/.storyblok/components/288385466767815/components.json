@@ -161,7 +161,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-11-09T10:21:42.179Z",
-    "updated_at": "2026-01-05T21:41:24.788Z",
+    "updated_at": "2026-01-05T23:29:31.536Z",
     "id": 110567842531291,
     "schema": {
       "burger_menu": {
@@ -198,6 +198,48 @@
         "type": "multiasset",
         "pos": 3,
         "id": "QlJgaBlyQ8up80eUl_-Hig"
+      },
+      "footer_item_title_1": {
+        "type": "text",
+        "pos": 4,
+        "id": "IXjB45RQRgG14spoe-ZrwA"
+      },
+      "footer_item_title_2": {
+        "type": "text",
+        "pos": 5,
+        "id": "NfmAdzukQXKTF-DYUJO7ew"
+      },
+      "footer_item_title_3": {
+        "type": "text",
+        "pos": 6,
+        "id": "haXrFEMaQBK2KtK3i3IqBg"
+      },
+      "footer_item_desc_3": {
+        "type": "richtext",
+        "pos": 7,
+        "id": "24Q0QcAMTZeZIfIGSuh8Og"
+      },
+      "footer_item_title_4": {
+        "type": "text",
+        "pos": 8,
+        "id": "cyIoyq2OTVChuIpQHDbZ8Q"
+      },
+      "footer_item_desc_4": {
+        "type": "richtext",
+        "pos": 9,
+        "id": "PV724g17QD-beGBpecUzyg",
+        "translatable": true
+      },
+      "footer_social_title": {
+        "type": "text",
+        "pos": 10,
+        "id": "TJ6_gx1TSHKrAwGfByGyww"
+      },
+      "footer_copyright_text": {
+        "type": "text",
+        "pos": 11,
+        "id": "soV4XBm-RMicasJ91bszvA",
+        "default_value": "Y"
       }
     },
     "image": null,

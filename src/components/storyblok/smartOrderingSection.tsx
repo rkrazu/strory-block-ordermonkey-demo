@@ -23,7 +23,7 @@ const SmartOrderingSection = ({ blok }: { blok: SmartOrderingSectionType }) => {
 				<div className="main__container">
 					<div className="flex items-center mdPlus:items-end lg:items-center flex-col-reverse lg:justify-between mdPlus:flex-row gap-6 mdPlus:gap-[60px] pt-[41px] pb-8">
 						<div
-							className="text-whiteColor mdPlus:min-w-[50%] mdPlus:max-w-[50%] xl:min-w-[62.7%] xl:max-w-[62.7%] text-center mdPlus:text-left mdPlus:ml-10 slide__up animate-slide-up"
+							className="text-whiteColor mdPlus:min-w-[50%] mdPlus:max-w-[50%] xl:min-w-[62.7%] xl:max-w-[62.7%] text-center mdPlus:text-left mdPlus:ml-10 slide__up"
 							style={{ opacity: 0, transform: "translateY(300px)" }}
 						>
 							{blok.title && (
@@ -78,7 +78,7 @@ const SmartOrderingSection = ({ blok }: { blok: SmartOrderingSectionType }) => {
 							</ul>
 						</div>
 						<div
-							className="relative slide__up animate-slide-up"
+							className="relative slide__up"
 							style={{ opacity: 0, transform: "translateY(300px)" }}
 						>
 							{blok.thumbnail?.filename && (

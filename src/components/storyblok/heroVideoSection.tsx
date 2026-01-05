@@ -40,7 +40,7 @@ const HeroVideoSection = ({ blok }: { blok: HeroVideoSectionType }) => {
 
 			<div className="absolute top-0 left-0 w-full h-full lg:h-screen flex flex-col items-center justify-center z-30 text-whiteColor">
 				<div
-					className="main__container text-center slide__up animate-slide-up"
+					className="main__container text-center slide__up"
 					style={{ opacity: 0, transform: "translateY(300px)" }}
 				>
 					{blok.title && (

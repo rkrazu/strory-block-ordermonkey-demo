@@ -37,6 +37,14 @@ export interface Global {
   footer?: FooterItem[];
   header_button?: string;
   logo?: StoryblokMultiasset;
+  footer_item_title_1?: string;
+  footer_item_title_2?: string;
+  footer_item_title_3?: string;
+  footer_item_desc_3?: StoryblokRichtext;
+  footer_item_title_4?: string;
+  footer_item_desc_4?: StoryblokRichtext;
+  footer_social_title?: string;
+  footer_copyright_text?: string;
   component: "global";
   _uid: string;
   [k: string]: unknown;

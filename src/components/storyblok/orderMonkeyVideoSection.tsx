@@ -36,7 +36,7 @@ const OrderMonkeyVideoSection = ({
 					)}
 					<div className="relative">
 						<div
-							className="video-wrapper w-full max-w-[1148px] mx-auto rounded-2xl overflow-hidden relative slide__up animate-slide-up"
+							className="video-wrapper w-full max-w-[1148px] mx-auto rounded-2xl overflow-hidden relative slide__up "
 							style={{ opacity: 0, transform: "translateY(300px)" }}
 						>
 							{/* Thumbnail */}

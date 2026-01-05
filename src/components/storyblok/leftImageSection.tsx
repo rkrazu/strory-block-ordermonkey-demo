@@ -15,7 +15,7 @@ const LeftImageSection = ({ blok }: { blok: LeftImageSectionType }) => {
 			<div className="main__container">
 				<div className="flex items-center gap-4 lg:gap-16">
 					<figure
-						className="relative w-full lg:min-w-[40%] lg:max-w-[40%] xl:min-w-[48.19%] xl:max-w-[48.19%] slide__up animate-slide-up"
+						className="relative w-full lg:min-w-[40%] lg:max-w-[40%] xl:min-w-[48.19%] xl:max-w-[48.19%] slide__up"
 						style={{ opacity: 0, transform: "translateY(300px)" }}
 					>
 						{blok.image?.filename && (
@@ -52,7 +52,7 @@ const LeftImageSection = ({ blok }: { blok: LeftImageSectionType }) => {
 					</figure>
 
 					<div
-						className="hidden md:block relative slide__up animate-slide-up"
+						className="hidden md:block relative slide__up "
 						style={{ opacity: 0, transform: "translateY(300px)" }}
 					>
 						<img

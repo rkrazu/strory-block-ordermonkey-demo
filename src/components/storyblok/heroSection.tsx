@@ -20,7 +20,7 @@ const HeroSection = ({ blok }: { blok: HeroSectionType }) => {
 			>
 				<div className="main__container w-full">
 					<div
-						className="min-w-[60%] md:max-w-[80%] lg:max-w-[60%] text-whiteColor slide__up relative z-[1] animate-slide-up"
+						className="min-w-[60%] md:max-w-[80%] lg:max-w-[60%] text-whiteColor slide__up relative z-[1]"
 						style={{ opacity: 0, transform: "translateY(300px)" }}
 					>
 						<img
