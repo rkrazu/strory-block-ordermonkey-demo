@@ -125,8 +125,8 @@ const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , h
 										</Link>
 									</li>
 								))} */}
-								<a className="white__link font-Grauna" href="/de/start" title="English">DE</a>
-								<a className="white__link font-Grauna" href="/en/start" title="Arabic">EN</a>
+								<a className="white__link font-Grauna" href="/de/start" title="Deutsch">DE</a>
+								<a className="white__link font-Grauna" href="/en/start" title="English">EN</a>
 							</ul>
 						</div>
 					</div>
