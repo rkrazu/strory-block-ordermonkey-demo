@@ -17,6 +17,7 @@ export interface Cards {
   description?: string;
   tag?: string;
   background_image?: StoryblokAsset;
+  icon?: StoryblokAsset;
   component: "cards";
   _uid: string;
   [k: string]: unknown;
@@ -75,6 +76,7 @@ export interface Grid {
     | OrdermonkeyEcosystemSection
     | OrdermonkeyFaqSection
     | OrdermonkeyPartnerSection
+    | OrdermonkeySuccessStories
     | OrderMonkeyVideoSection
     | Page
     | RightImageSection
@@ -207,6 +209,14 @@ export interface OrdermonkeyPartnerSection {
   [k: string]: unknown;
 }
 
+export interface OrdermonkeySuccessStories {
+  title?: string;
+  cards?: Cards[];
+  component: "ordermonkey_success_stories";
+  _uid: string;
+  [k: string]: unknown;
+}
+
 export interface OrderMonkeyVideoSection {
   video_thumb?: StoryblokAsset;
   video?: StoryblokAsset;
@@ -237,6 +247,7 @@ export interface Page {
     | OrdermonkeyEcosystemSection
     | OrdermonkeyFaqSection
     | OrdermonkeyPartnerSection
+    | OrdermonkeySuccessStories
     | OrderMonkeyVideoSection
     | Page
     | RightImageSection

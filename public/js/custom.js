@@ -315,6 +315,169 @@
     // Sync both sliders
     imageSlider.controller.control = headingSlider;
     headingSlider.controller.control = imageSlider;
+
+
+	//implement success stories slider
+	if (document.querySelector(".success-stories__slider")) {
+		new Swiper(".success__story__mobile", {
+        navigation: {
+            nextEl: ".mobile-button-next",
+            prevEl: ".mobile-button-prev",
+        },
+    });
+    //mobile slider script ends
+    const cards = Array.from(document.querySelectorAll('.card')).reverse();
+    const overlays = document.querySelectorAll('.modalOverlay');
+    const storyModalBtns = document.querySelectorAll('.story__modal__btn');
+    const storyModals = document.querySelectorAll('.storyModal');
+    const closeStoryBtns = document.querySelectorAll('.closeModalBtn');
+    const videoModalBtns = document.querySelectorAll('.videoPlayBtn');
+    const closeVideoBtns = document.querySelectorAll('.closeVideoBtn');
+    const leftBtn = document.getElementById('leftBtn');
+    const rightBtn = document.getElementById('rightBtn');
+
+    let current = 0;
+
+    // Function to update button states
+    function updateButtonStates() {
+        const remainingCards = cards.length - current;
+        
+        if (remainingCards <= 1) {
+            // Disable both buttons when only one card remains
+            leftBtn.disabled = true;
+            rightBtn.disabled = true;
+        } else {
+            // Enable both buttons when multiple cards remain
+            leftBtn.disabled = false;
+            rightBtn.disabled = false;
+        }
+    }
+
+    function swipe(direction) {
+        if (current >= cards.length) return;
+        const card = cards[current];
+        card.style.transition = 'all 1.2s ease-in-out';
+        card.style.transform = direction === 'left' ? 'translateX(-300%)' : 'translateX(300%)';
+        card.classList.add('hidden-card');
+        current++;
+        
+        // Update button states after each swipe
+        updateButtonStates();
+        
+        if (current === cards.length) {
+            setTimeout(() => {
+                document.getElementById('cardContainer').style.display = 'none';
+            }, 600);
+        }
+    }
+    updateButtonStates();
+    // Initialize button states
+
+    const rotations = [0, 0, -7, 7, -16, 14];
+    let rotationIndex = 0;
+
+    function swipe(direction) {
+        if (direction === 'left') {
+            if (current >= cards.length - 1) {
+                current = cards.length - 1;
+                return;
+            }
+            const card = cards[current];
+            rotationIndex = (rotationIndex + 1) % rotations.length;
+            card.style.transition = 'all 1.2s ease-in-out';
+            card.style.transform = `translateX(-300%) rotate(${rotations[rotationIndex]}deg)`;
+            card.classList.add('hidden-card');
+            current++;
+        } 
+        else if (direction === 'right') {
+            if (current <= 0) {
+                current = 0;
+                return;
+            }
+            current--;
+            rotationIndex = (rotationIndex - 1 + rotations.length) % rotations.length;
+            const card = cards[current];
+            card.style.transition = 'all 1.2s ease-in-out';
+            card.style.transform = `translateX(0%) rotate(${rotations[rotationIndex]}deg)`;
+            card.classList.remove('hidden-card');
+            card.classList.add('prev-card');
+        }
+
+        updateButtonStates();
+    }
+
+    function updateButtonStates() {
+        leftBtn.disabled = (current === 0);
+        rightBtn.disabled = (current === cards.length - 1);
+    }
+    // previous state back js ends
+
+    leftBtn.addEventListener('click', () => swipe('right'));
+    rightBtn.addEventListener('click', () => swipe('left'));
+
+    // Open story modal
+    storyModalBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const index = this.getAttribute('data-modal-index');
+            document.getElementById('modalOverlay-' + index)?.classList.remove('hidden');
+            document.getElementById('storyModal-' + index)?.classList.remove('hidden');
+            console.log("clicked");
+        });
+    });
+
+    // Close story modal
+    closeStoryBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const index = this.getAttribute('data-modal-index');
+            document.getElementById('modalOverlay-' + index)?.classList.add('hidden');
+            document.getElementById('storyModal-' + index)?.classList.add('hidden');
+        });
+    });
+
+    // Open video modal
+    videoModalBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const index = this.getAttribute('data-video-index');
+            const modal = document.getElementById('videoPlayer-' + index);
+            const video = modal?.querySelector('video');
+            if (modal && video) {
+                modal.classList.remove('hidden');
+                video.currentTime = 0;
+                video.play();
+            }
+        });
+    });
+
+    // Close video modal
+    closeVideoBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const index = this.getAttribute('data-video-index');
+            const modal = document.getElementById('videoPlayer-' + index);
+            const video = modal?.querySelector('video');
+            if (modal && video) {
+                video.pause();
+                video.currentTime = 0;
+                modal.classList.add('hidden');
+            }
+        });
+    });
+
+    // Overlay click closes all modals
+    overlays.forEach(overlay => {
+        overlay.addEventListener('click', () => {
+            overlay.classList.add('hidden');
+            storyModals.forEach(modal => modal.classList.add('hidden'));
+            document.querySelectorAll('.videoPlayer').forEach(modal => {
+                const video = modal.querySelector('video');
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+                modal.classList.add('hidden');
+            });
+        });
+    });
+	}
 			}
 		} else {
 			console.error("Swiper is not defined. Check if swiper-bundle.min.js is loading correctly.");

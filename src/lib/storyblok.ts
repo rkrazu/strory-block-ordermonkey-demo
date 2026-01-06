@@ -61,6 +61,10 @@ const OrdermonkeyEcoSlider = dynamic(() => import("@/components/storyblok/orderm
 	ssr: true,
 });
 
+const ordermonkeySuccessStories = dynamic(() => import("@/components/storyblok/ordermonkeySuccessStories"), {
+	ssr: true,
+});
+
 const Links = dynamic(() => import("@/components/storyblok/links"), {
 	ssr: true,
 });
@@ -97,6 +101,7 @@ const components = {
 	ordermonkey_faq_section: ordermonkeyFaqSection,
 	order_monkey_video_section: orderMonkeyVideoSection,
 	ordermonkey_eco_slider: OrdermonkeyEcoSlider,
+	ordermonkey_success_stories: ordermonkeySuccessStories,
 	blog: Blog,
 	global: Global,
 };
