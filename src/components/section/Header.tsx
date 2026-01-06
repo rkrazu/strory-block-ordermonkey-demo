@@ -1,14 +1,14 @@
 "use client";
 
-import type { Menu } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { Menu } from "@/.storyblok/types/288385466767815/storyblok-components";
 import { useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { i18n } from "@/i18n/i18n-config";
+import type { StoryblokMultiasset } from "@/.storyblok/types/288385466767815/storyblok-components";
 
-const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
+const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , header_button?: string , logo?: StoryblokMultiasset }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const pathname = usePathname();
-
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 	return (
 		<header>
@@ -18,14 +18,14 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 					<figure className="logo__part">
 						<Link href="/">
 							<img
-								src="/Monkey-Head-120x120-1.gif"
+								src={logo?.[0].filename || ""}
 								className="w-[57px]"
 								alt="monkey-head"
 								title="monkey-head"
 							/>
 
 							<img
-								src="/logo-text.svg"
+								src={logo?.[1].filename || ""}
 								className="w-[110px]"
 								alt="Order Monkey Text Logo"
 								title="Order Monkey Text Logo"
@@ -34,16 +34,46 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 					</figure>
 
 					<div className="menu__part">
-						<ul className="relative flex items-center gap-5">
-							{burger_menu?.[0]?.items?.map((item) => (
-								<li key={item._uid} className="menu-item">
-									<Link href={"/"} title={item.title}>
-										{item.title}
-									</Link>
-								</li>
-							))}
-						</ul>
-					</div>
+                        <ul className="relative flex items-center gap-5">
+                            {burger_menu?.map((item) => {
+                                if (item.component === "menu") {
+                                    return item.items?.map((menuItem) => {
+                                        const hasSubItems = menuItem.SubItems && menuItem.SubItems.length > 0;
+
+                                        if (hasSubItems) {
+                                            return (
+                                                <li key={menuItem._uid} className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children relative main__dropdown pr-3">
+                                                    <button className="drop__btn arrow--down" title={menuItem.title}>
+                                                        {menuItem.title}
+                                                    </button>
+                                                    <ul className="dropdown__list">
+                                                        {menuItem.SubItems?.map((sub) => (
+                                                            <li key={sub._uid} className="menu-item menu-item-type-post_type menu-item-object-page">
+                                                                <Link href={"/"} title={sub.title}>
+                                                                    <span className="icon-arrow_forward"></span>
+                                                                    <span className="nav__text">{sub.title}</span>
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </li>
+                                            );
+                                        }
+
+                                        return (
+                                            <li key={menuItem._uid} className="menu-item">
+                                                <Link href={"/"} title={menuItem.title}>
+                                                    {menuItem.title}
+                                                </Link>
+                                            </li>
+                                        );
+                                    });
+                                }
+                                return null;
+                            })}
+                        </ul>
+                    </div>
+
 
 					<div className="options__part">
 						<div className="social__media">
@@ -75,7 +105,7 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 							<ul className="flex items-center gap-3">
 								<li>
 									<button className="startJourneyOpen secondary__btn" title="Get in Touch">
-										Get in Touch
+										{header_button}
 									</button>
 								</li>
 							</ul>
@@ -103,12 +133,23 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 
 			{/* Mobile Header */}
 			<div className="responsive__header lg:hidden">
-				<div className="logo__part">
-					<Link href="/">
-						<img src="/Monkey-Head-120x120-1.gif" className="w-[43px]" alt="Logo head" />
-						<img src="/logo-text.svg" className="w-[88px]" alt="Logo text" />
-					</Link>
-				</div>
+					<figure className="logo__part">
+						<Link href="/">
+							<img
+								src={logo?.[0].filename || ""}
+								className="w-[32px]"
+								alt="monkey-head"
+								title="monkey-head"
+							/>
+
+							<img
+								src={logo?.[1].filename || ""}
+								className="w-[62px]"
+								alt="Order Monkey Text Logo"
+								title="Order Monkey Text Logo"
+							/>
+						</Link>
+					</figure>
 				<div className="flex items-center gap-4">
 					<div className="language__mobile">
 						<ul>
@@ -137,8 +178,22 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 			{/* Mobile Menu Overlay */}
 			<div id="responsiveCover" className={`responsive__full__wrapper overflow-y-scroll [&::-webkit-scrollbar]:hidden ${isMenuOpen ? 'show' : ''}`}>
 				<div className="flex items-center justify-between">
-					<figure>
-						<img src="/white-logo.svg" className="w-[100px]" alt="White Logo" />
+					<figure className="logo__part">
+						<Link href="/">
+							<img
+								src={logo?.[0].filename || ""}
+								className="w-[32px]"
+								alt="monkey-head"
+								title="monkey-head"
+							/>
+
+							<img
+								src={logo?.[1].filename || ""}
+								className="w-[62px]"
+								alt="Order Monkey Text Logo"
+								title="Order Monkey Text Logo"
+							/>
+						</Link>
 					</figure>
 					<div>
 						<button onClick={toggleMenu} aria-label="Close responsive menu" className="border-none">
@@ -150,10 +205,10 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 				<div className="my-12 relative">
 					<div className="responsiveMenuWrapper">
 						<nav>
-							<ul className="flex flex-col gap-12 !ml-[7px]">
-								{burger_menu?.[0]?.items?.map((item) => (
-									<li key={item._uid}>
-										<Link href={ "/"} onClick={toggleMenu} className="text-whiteColor text-24">
+							<ul className="flex flex-col gap-12 arrow__button__transition !ml-[7px]">
+								{burger_menu?.[0]?.items?.[0]?.SubItems?.map((item) => (
+									<li key={item._uid} className="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3900 current_page_item">
+										<Link href={ "/"} onClick={toggleMenu} className="text-24 leading-[36px] tracking-[.96px] font-Grauna">
 											{item.title}
 										</Link>
 									</li>
@@ -164,13 +219,8 @@ const Header = ({ burger_menu }: { burger_menu?: Menu[] }) => {
 						<div className="bg-blackColor pb-5 mt-10">
 							<ul className="flex flex-col gap-6">
 								<li>
-									<button className="primary__btn border-none w-full" onClick={toggleMenu}>
-										Get in Touch
-									</button>
-								</li>
-								<li>
 									<button className="white__outline__btn w-full" onClick={toggleMenu}>
-										Partner Login
+										{header_button}
 									</button>
 								</li>
 							</ul>

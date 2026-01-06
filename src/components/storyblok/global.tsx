@@ -1,5 +1,5 @@
 import { type SbBlokData, storyblokEditable } from "@storyblok/react/rsc";
-import type { Global as GlobalStoryblok } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { Global as GlobalStoryblok } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const Global = ({ blok }: { blok: GlobalStoryblok }) => {
 	return (

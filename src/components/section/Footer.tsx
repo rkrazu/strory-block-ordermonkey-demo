@@ -1,6 +1,8 @@
-import type { FooterItem } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { FooterItem, StoryblokMultiasset, StoryblokRichtext } from "@/.storyblok/types/288385466767815/storyblok-components";
+import { renderRichText } from "@storyblok/react/rsc";
+import parse from "html-react-parser";
 
-const Footer = ({ blok }: { blok?: FooterItem[] }) => {
+const Footer = ({ blok,logo, footer_item_title_1, footer_item_title_2, footer_item_title_3, footer_item_desc_3, footer_item_title_4, footer_item_desc_4, footer_social_title, footer_copyright_text }: { blok?: FooterItem[], logo?: StoryblokMultiasset, footer_item_title_1?: string, footer_item_title_2?: string, footer_item_title_3?: string, footer_item_desc_3?: StoryblokRichtext, footer_item_title_4?: string, footer_item_desc_4?: StoryblokRichtext, footer_social_title?: string, footer_copyright_text?: string }) => {
 	return (
 		<footer className="main__footer">
 			<div className="footer__top__icon">
@@ -23,18 +25,23 @@ const Footer = ({ blok }: { blok?: FooterItem[] }) => {
 								<div className="footer-widget">
 									<figure className="wp-block-image size-full mb-10 lg:mb-16 flex justify-center md:justify-start">
 										<img
-											decoding="async"
-											src="/footer-logo.svg"
-											alt="Order Monkey Logo"
-											className="wp-image-2341 w-[250px] md:w-[161px]"
-											title="Order Monkey"
-										/>
+										src={logo?.[0].filename || ""}
+										className="w-[57px]"
+										alt="monkey-head"
+										title="monkey-head"
+									/>
+									<img
+										src={logo?.[1].filename || ""}
+										className="w-[110px]"
+										alt="Order Monkey Text Logo"
+										title="Order Monkey Text Logo"
+									/>
 									</figure>
 								</div>{" "}
 							</a>
 
 							<div className="mb-12 md:mb-0">
-								<div className="text-16 font-Grauna mb-5">Let’s Connect</div>
+								<div className="text-16 font-Grauna mb-5">{footer_social_title}</div>
 								<ul className="flex items-center justify-center md:justify-start gap-4">
 									<li>
 										<a
@@ -72,136 +79,67 @@ const Footer = ({ blok }: { blok?: FooterItem[] }) => {
 
 						<div className="footer__menu">
 							<div className="text-14 lg:text-16 font-Grauna mb-3 lg:mb-5">
-								Ecosystem
+								{footer_item_title_1}
 							</div>
 							<ul id="footer-menu-1" className="flex flex-col gap-2">
-								<li
-									id="menu-item-3925"
-									className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3925"
-								>
-									<a
+								{blok?.[0]?.items?.map((item, index) => (
+									<li key={index}
+										id={`menu-item-${index}`}
+										className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3925"
+									>
+										<a
 										href="/"
-										title="Self Order Terminal"
+										title={item.text}
 										className="footer__item"
 									>
-										Self Order Terminal
+										{item.text}
 									</a>
 								</li>
-								<li
-									id="menu-item-3924"
-									className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3924"
-								>
-									<a
-										href="/"
-										title="QR Web App"
-										className="footer__item"
-									>
-										QR Web App
-									</a>
-								</li>
-								<li
-									id="menu-item-3923"
-									className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3923"
-								>
-									<a
-										href="/"
-										title="Web Shop"
-										className="footer__item"
-									>
-										Web Shop
-									</a>
-								</li>
-								<li
-									id="menu-item-3922"
-									className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3922"
-								>
-									<a
-										href="/"
-										title="OMK Pay"
-										className="footer__item"
-									>
-										OMK Pay
-									</a>
-								</li>
-								<li
-									id="menu-item-3921"
-									className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3921"
-								>
-									<a
-										href="/"
-										title="Loyalty"
-										className="footer__item"
-									>
-										Loyalty
-									</a>
-								</li>
+								))}
 							</ul>{" "}
 						</div>
 						<div className="footer__menu">
 							<div className="text-14 lg:text-16 font-Grauna mb-3 lg:mb-5">
-								Company
+								{footer_item_title_2}
 							</div>
 							<ul id="footer-menu-2" className="flex flex-col gap-2">
-								<li
-									id="menu-item-1658"
-									className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1658"
-								>
-									<a
+								{blok?.[1]?.items?.map((item, index) => (
+									<li key={index}
+										id={`menu-item-${index}`}
+										className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1658"
+									>
+										<a
 										target="_blank"
 										href="/"
-										title="Careers"
+										title={item.text}
 										className="footer__item"
 									>
-										Careers
+										{item.text}
 									</a>
 								</li>
-								<li
-									id="menu-item-3862"
-									className="menu-item menu-item-type-post_type menu-item-object-page menu-item-3862"
-								>
-									<a
-										href="/"
-										title="Blog"
-										className="footer__item"
-									>
-										Blog
-									</a>
-								</li>
+							))}
 							</ul>{" "}
 						</div>
 						<div className="footer__menu">
 							<div className="text-14 lg:text-16 font-Grauna mb-3 lg:mb-5">
-								Support
+								{footer_item_title_3}
 							</div>
 							<div className="textwidget custom-html-widget">
 								<ul className="footer__menu">
-									<li>
-										<a href="/">
-											support@ordermonkey.com
-										</a>
-									</li>
-									<li>
-										<a href="/">+41 41 562 76 94</a>
-									</li>
+								{parse(renderRichText(footer_item_desc_3) ?? "")}
 								</ul>
 							</div>{" "}
 						</div>
 
 						<div className="footer__menu">
 							<div className="text-14 lg:text-16 font-Grauna mb-3 lg:mb-5">
-								Location
+								{footer_item_title_4}
 							</div>
 							<a
 								href="/"
 								target="_blank"
 							>
-								<p></p>
-								SELISE GROUP AG <br /> ORDERMONKEY SCHWEIZ <br /> The Circle 37,
-								8058 Zurich Airport, Zurich
-								<br />
-								<br />
-								SELISE GROUP AG <br /> ORDERMONKEY DEUTSCHLAND Friedrichstraße
-								79, 10117 Berlin{" "}
+								{parse(renderRichText(footer_item_desc_4) ?? "")}
 							</a>
 						</div>
 					</div>
@@ -213,36 +151,26 @@ const Footer = ({ blok }: { blok?: FooterItem[] }) => {
 									id="footer-bottom-menu-id"
 									className="flex flex-col md:flex-row items-center gap-2 lg:gap-6"
 								>
-									<li
-										id="menu-item-4087"
+									{blok?.[2]?.items?.map((item, index) => (
+									<li key={index}
+										id={`menu-item-${index}`}
 										className="menu-item menu-item-type-post_type menu-item-object-page menu-item-4087"
 									>
 										<a
 											href="/"
-											title="Privacy Policy"
+											title={item.text}
 											className="footer__item font-light hover:border-b border-whiteColor"
 										>
-											Privacy Policy
+											{item.text}
 										</a>
 									</li>
-									<li
-										id="menu-item-4086"
-										className="menu-item menu-item-type-post_type menu-item-object-page menu-item-4086"
-									>
-										<a
-											href="/"
-											title="Terms of Service"
-											className="footer__item font-light hover:border-b border-whiteColor"
-										>
-											Terms of Service
-										</a>
-									</li>
+									))}
 								</ul>
 							</div>
 						</div>
 						<div className="mt-[18px] md:mt-0">
 							<div className="footer-widget">
-								<p>Copyright © 2026 SELISE. All right reserved.</p>
+								<p>{footer_copyright_text}</p>
 							</div>{" "}
 						</div>
 					</div>

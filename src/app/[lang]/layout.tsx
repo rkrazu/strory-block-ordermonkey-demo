@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import type { ReactNode } from "react";
-import type { Global } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { Global } from "@/.storyblok/types/288385466767815/storyblok-components";
 import { StoryblokProvider } from "@/components/storyblokProvider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { i18n, type Locale } from "@/i18n/i18n-config";
@@ -129,11 +129,26 @@ export default async function PageLayout({
 					<StoryblokProvider>
 						<ThemeProvider attribute="class" defaultTheme="light" enableSystem>
 							<main className="">
-								<Header burger_menu={globalStory?.burger_menu} />
+								<Header 
+                    burger_menu={globalStory?.burger_menu} 
+                    header_button={globalStory?.header_button} 
+                    logo={globalStory?.logo} 
+                    />
 
 								{children}
 								{/* footer */}
-								<Footer blok={globalStory?.footer} />
+								<Footer 
+                    blok={globalStory?.footer} 
+                    logo={globalStory?.logo} 
+                    footer_item_title_1={globalStory?.footer_item_title_1} 
+                    footer_item_title_2={globalStory?.footer_item_title_2} 
+                    footer_item_title_3={globalStory?.footer_item_title_3} 
+                    footer_item_desc_3={globalStory?.footer_item_desc_3} 
+                    footer_item_title_4={globalStory?.footer_item_title_4} 
+                    footer_item_desc_4={globalStory?.footer_item_desc_4} 
+                    footer_social_title={globalStory?.footer_social_title} 
+                    footer_copyright_text={globalStory?.footer_copyright_text}
+                />
 								{/* footer */}
 							</main>
 						</ThemeProvider>

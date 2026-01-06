@@ -4,9 +4,9 @@ import {
 	storyblokEditable,
 } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
-import type { heroSection as heroSectionType } from "@/.storyblok/types/287474179047807/storyblok-components";
+import type { HeroSection as HeroSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
-const heroSection = ({ blok }: { blok: heroSectionType }) => {
+const HeroSection = ({ blok }: { blok: HeroSectionType }) => {
 	return (
 		<div
 			{...storyblokEditable(blok as SbBlokData)}
@@ -20,7 +20,7 @@ const heroSection = ({ blok }: { blok: heroSectionType }) => {
 			>
 				<div className="main__container w-full">
 					<div
-						className="min-w-[60%] md:max-w-[80%] lg:max-w-[60%] text-whiteColor slide__up relative z-[1] animate-slide-up"
+						className="min-w-[60%] md:max-w-[80%] lg:max-w-[60%] text-whiteColor slide__up relative z-[1]"
 						style={{ opacity: 0, transform: "translateY(300px)" }}
 					>
 						<img
@@ -51,4 +51,4 @@ const heroSection = ({ blok }: { blok: heroSectionType }) => {
 		</div>
 	);
 };
-export default heroSection;
+export default HeroSection;
