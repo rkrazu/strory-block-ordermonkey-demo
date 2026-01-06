@@ -6,12 +6,12 @@ import {
 	storyblokEditable,
 } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
-import type { OrdermonkeyVideoSection as OrdermonkeyVideoSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
+import type { OrderMonkeyVideoSection as OrderMonkeyVideoSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 import { useState, useRef } from "react";
 
-const OrdermonkeyVideoSection = ({
+const OrderMonkeyVideoSection = ({
 	blok,
-}: { blok: OrdermonkeyVideoSectionType }) => {
+}: { blok: OrderMonkeyVideoSectionType }) => {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -90,4 +90,4 @@ const OrdermonkeyVideoSection = ({
 	);
 };
 
-export default OrdermonkeyVideoSection;
+export default OrderMonkeyVideoSection;

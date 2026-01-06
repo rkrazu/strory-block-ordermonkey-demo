@@ -743,6 +743,42 @@
     "metadata": {}
   },
   {
+    "name": "ordermonkey_eco_slider",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-06T10:35:08.546Z",
+    "updated_at": "2026-01-06T12:03:07.780Z",
+    "id": 131097020635536,
+    "schema": {
+      "cards": {
+        "type": "bloks",
+        "pos": 2,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "cards"
+        ],
+        "component_denylist": [],
+        "id": "GBk8TSe0RkumWk8Md7x6cA"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "ordermonkey_eco_slider",
+    "component_group_uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "ordermonkey_ecosystem_section",
     "display_name": null,
     "description": "",
@@ -781,42 +817,6 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "ordermonkey_ecosystem_section",
-    "component_group_uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
-    "color": null,
-    "icon": null,
-    "internal_tags_list": [],
-    "internal_tag_ids": [],
-    "content_type_asset_preview": null,
-    "metadata": {}
-  },
-  {
-    "name": "ordermonkey_ecosystem_slide",
-    "display_name": null,
-    "description": "",
-    "created_at": "2026-01-06T10:35:08.546Z",
-    "updated_at": "2026-01-06T10:36:15.329Z",
-    "id": 131097020635536,
-    "schema": {
-      "cards": {
-        "type": "bloks",
-        "pos": 2,
-        "restrict_type": "",
-        "restrict_components": true,
-        "component_whitelist": [
-          "cards"
-        ],
-        "component_denylist": [],
-        "id": "GBk8TSe0RkumWk8Md7x6cA"
-      }
-    },
-    "image": null,
-    "preview_field": null,
-    "is_root": false,
-    "preview_tmpl": null,
-    "is_nestable": true,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "ordermonkey_ecosystem_slide",
     "component_group_uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
     "color": null,
     "icon": null,
@@ -946,11 +946,11 @@
     "metadata": {}
   },
   {
-    "name": "ordermonkey_video_section",
+    "name": "order_monkey_video_section",
     "display_name": null,
     "description": "",
     "created_at": "2026-01-04T00:14:03.034Z",
-    "updated_at": "2026-01-04T00:14:51.980Z",
+    "updated_at": "2026-01-06T12:01:40.563Z",
     "id": 130236592275109,
     "schema": {
       "video_thumb": {
@@ -981,7 +981,7 @@
     "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "ordermonkey_video_section",
+    "real_name": "order_monkey_video_section",
     "component_group_uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
     "color": null,
     "icon": null,

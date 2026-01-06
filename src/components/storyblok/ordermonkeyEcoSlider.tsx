@@ -2,12 +2,12 @@ import {
 	type SbBlokData,
 	storyblokEditable,
 } from "@storyblok/react/rsc";
-import type { OrdermonkeyEcosystemSlide as OrdermonkeyEcosystemSlideType } from "@/.storyblok/types/288385466767815/storyblok-components";
+import type { OrdermonkeyEcoSlider as OrdermonkeyEcoSliderType } from "@/.storyblok/types/288385466767815/storyblok-components";
 import Link from "next/link";
 
-const OrdermonkeyEcosystemSlide = ({
+const OrdermonkeyEcoSlider = ({
 	blok,
-}: { blok: OrdermonkeyEcosystemSlideType }) => {
+}: { blok: OrdermonkeyEcoSliderType }) => {
 	return (
 		<section
 			{...storyblokEditable(blok as SbBlokData)}
@@ -137,4 +137,4 @@ const OrdermonkeyEcosystemSlide = ({
 	);
 };
 
-export default OrdermonkeyEcosystemSlide;
+export default OrdermonkeyEcoSlider;

@@ -71,11 +71,11 @@ export interface Grid {
     | MenuItem
     | OrdermonkeyCustomerSection
     | OrdermonkeyDeviceSection
+    | OrdermonkeyEcoSlider
     | OrdermonkeyEcosystemSection
-    | OrdermonkeyEcosystemSlide
     | OrdermonkeyFaqSection
     | OrdermonkeyPartnerSection
-    | OrdermonkeyVideoSection
+    | OrderMonkeyVideoSection
     | Page
     | RightImageSection
     | Robots
@@ -169,18 +169,18 @@ export interface OrdermonkeyDeviceSection {
   [k: string]: unknown;
 }
 
+export interface OrdermonkeyEcoSlider {
+  cards?: Cards[];
+  component: "ordermonkey_eco_slider";
+  _uid: string;
+  [k: string]: unknown;
+}
+
 export interface OrdermonkeyEcosystemSection {
   title?: string;
   title_2?: string;
   cards?: Cards[];
   component: "ordermonkey_ecosystem_section";
-  _uid: string;
-  [k: string]: unknown;
-}
-
-export interface OrdermonkeyEcosystemSlide {
-  cards?: Cards[];
-  component: "ordermonkey_ecosystem_slide";
   _uid: string;
   [k: string]: unknown;
 }
@@ -207,11 +207,11 @@ export interface OrdermonkeyPartnerSection {
   [k: string]: unknown;
 }
 
-export interface OrdermonkeyVideoSection {
+export interface OrderMonkeyVideoSection {
   video_thumb?: StoryblokAsset;
   video?: StoryblokAsset;
   title?: StoryblokRichtext;
-  component: "ordermonkey_video_section";
+  component: "order_monkey_video_section";
   _uid: string;
   [k: string]: unknown;
 }
@@ -233,11 +233,11 @@ export interface Page {
     | MenuItem
     | OrdermonkeyCustomerSection
     | OrdermonkeyDeviceSection
+    | OrdermonkeyEcoSlider
     | OrdermonkeyEcosystemSection
-    | OrdermonkeyEcosystemSlide
     | OrdermonkeyFaqSection
     | OrdermonkeyPartnerSection
-    | OrdermonkeyVideoSection
+    | OrderMonkeyVideoSection
     | Page
     | RightImageSection
     | Robots
