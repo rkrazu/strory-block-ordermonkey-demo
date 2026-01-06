@@ -9,7 +9,6 @@ import type { StoryblokMultiasset } from "@/.storyblok/types/288385466767815/sto
 const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , header_button?: string , logo?: StoryblokMultiasset }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const pathname = usePathname();
-// console.log(logo);
 	const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 	return (
 		<header>
@@ -19,14 +18,14 @@ const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , h
 					<figure className="logo__part">
 						<Link href="/">
 							<img
-								src={logo?.[0].filename}
+								src={logo?.[0].filename || ""}
 								className="w-[57px]"
 								alt="monkey-head"
 								title="monkey-head"
 							/>
 
 							<img
-								src={logo?.[1].filename}
+								src={logo?.[1].filename || ""}
 								className="w-[110px]"
 								alt="Order Monkey Text Logo"
 								title="Order Monkey Text Logo"
@@ -137,14 +136,14 @@ const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , h
 					<figure className="logo__part">
 						<Link href="/">
 							<img
-								src={logo?.[0].filename}
+								src={logo?.[0].filename || ""}
 								className="w-[32px]"
 								alt="monkey-head"
 								title="monkey-head"
 							/>
 
 							<img
-								src={logo?.[1].filename}
+								src={logo?.[1].filename || ""}
 								className="w-[62px]"
 								alt="Order Monkey Text Logo"
 								title="Order Monkey Text Logo"
@@ -182,14 +181,14 @@ const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , h
 					<figure className="logo__part">
 						<Link href="/">
 							<img
-								src={logo?.[0].filename}
+								src={logo?.[0].filename || ""}
 								className="w-[32px]"
 								alt="monkey-head"
 								title="monkey-head"
 							/>
 
 							<img
-								src={logo?.[1].filename}
+								src={logo?.[1].filename || ""}
 								className="w-[62px]"
 								alt="Order Monkey Text Logo"
 								title="Order Monkey Text Logo"

@@ -2,8 +2,7 @@ import type { FooterItem, StoryblokMultiasset, StoryblokRichtext } from "@/.stor
 import { renderRichText } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
 
-const Footer = ({ blok,logo, footer_item_title_1, footer_item_title_2, footer_item_title_3, footer_item_desc_3, footer_item_title_4, footer_item_desc_4, footer_social_title, footer_copyright_text }: { blok?: FooterItem[], logo?: StoryblokMultiasset[], footer_item_title_1?: string, footer_item_title_2?: string, footer_item_title_3?: string, footer_item_desc_3?: StoryblokRichtext, footer_item_title_4?: string, footer_item_desc_4?: StoryblokRichtext, footer_social_title?: string, footer_copyright_text?: string }) => {
-	console.log(blok);
+const Footer = ({ blok,logo, footer_item_title_1, footer_item_title_2, footer_item_title_3, footer_item_desc_3, footer_item_title_4, footer_item_desc_4, footer_social_title, footer_copyright_text }: { blok?: FooterItem[], logo?: StoryblokMultiasset, footer_item_title_1?: string, footer_item_title_2?: string, footer_item_title_3?: string, footer_item_desc_3?: StoryblokRichtext, footer_item_title_4?: string, footer_item_desc_4?: StoryblokRichtext, footer_social_title?: string, footer_copyright_text?: string }) => {
 	return (
 		<footer className="main__footer">
 			<div className="footer__top__icon">
@@ -26,13 +25,13 @@ const Footer = ({ blok,logo, footer_item_title_1, footer_item_title_2, footer_it
 								<div className="footer-widget">
 									<figure className="wp-block-image size-full mb-10 lg:mb-16 flex justify-center md:justify-start">
 										<img
-										src={logo?.[0].filename}
+										src={logo?.[0].filename || ""}
 										className="w-[57px]"
 										alt="monkey-head"
 										title="monkey-head"
 									/>
 									<img
-										src={logo?.[1].filename}
+										src={logo?.[1].filename || ""}
 										className="w-[110px]"
 										alt="Order Monkey Text Logo"
 										title="Order Monkey Text Logo"
