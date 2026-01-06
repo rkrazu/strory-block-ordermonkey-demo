@@ -95,8 +95,8 @@ const components = {
 	ordermonkey_customer_section: ordermonkeyCustomerSection,
 	ordermonkey_partner_section: ordermonkeyPartnerSection,
 	ordermonkey_faq_section: ordermonkeyFaqSection,
-	ordermonkey_video_section: orderMonkeyVideoSection,
-	ordermonkey_ecosystem_slide: OrdermonkeyEcoSlider,
+	order_monkey_video_section: orderMonkeyVideoSection,
+	ordermonkey_eco_slider: OrdermonkeyEcoSlider,
 	blog: Blog,
 	global: Global,
 };
