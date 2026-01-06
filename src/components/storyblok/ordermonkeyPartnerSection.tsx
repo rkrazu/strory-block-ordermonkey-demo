@@ -2,7 +2,7 @@ import {
 	type SbBlokData,
 	storyblokEditable,
 } from "@storyblok/react/rsc";
-import type { ordermonkeyPartnerSection as OrdermonkeyPartnerSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
+import type { OrdermonkeyPartnerSection as OrdermonkeyPartnerSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const OrdermonkeyPartnerSection = ({
 	blok,
