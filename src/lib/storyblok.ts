@@ -57,6 +57,10 @@ const ordermonkeyVideoSection = dynamic(() => import("@/components/storyblok/ord
 	ssr: true,
 });
 
+const ordermonkeyEcosystemSlide = dynamic(() => import("@/components/storyblok/OrdermonkeyEcosystemSlide"), {
+	ssr: true,
+});
+
 const Links = dynamic(() => import("@/components/storyblok/links"), {
 	ssr: true,
 });
@@ -92,6 +96,7 @@ const components = {
 	ordermonkey_partner_section: ordermonkeyPartnerSection,
 	ordermonkey_faq_section: ordermonkeyFaqSection,
 	ordermonkey_video_section: ordermonkeyVideoSection,
+	ordermonkey_ecosystem_slide: ordermonkeyEcosystemSlide,
 	blog: Blog,
 	global: Global,
 };

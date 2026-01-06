@@ -25,7 +25,7 @@ const OrdermonkeyDeviceSection = ({
 				</div>
 
 				{blok.title && (
-					<h2 className="text-48 leading-8 font-Grauna lg:secondary__title text-center text-text900 mb-8 md:mb-[100px] lg:mb-14 hd:mb-14 slide__up">
+					<h2 className="text-32 md:text-48 leading-8 font-Grauna lg:secondary__title text-center text-text900 mb-8 md:mb-[100px] lg:mb-14 hd:mb-14 slide__up">
 						{blok.title}
 					</h2>
 				)}

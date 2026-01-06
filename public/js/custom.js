@@ -252,6 +252,70 @@
 					}
 				});
 			}
+
+			// Ecosystem Slide Component Linked Sliders
+			if (document.querySelector(".main-slider-headings") && document.querySelector(".main-slider-images")) {
+				// Initialize the image slider with slide effect
+    const imageSlider = new Swiper(".main-slider-images", {
+        slidesPerView: 1,
+        effect: 'slide',
+        speed: 1200,
+        loop: false,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        allowTouchMove: false,
+        on: {
+            init: function() {
+                // Initialize icons with first slide class
+                const redIcon = document.querySelector('.red-icon-animate');
+                const blackIcon = document.querySelector('.black-icon-animate');
+                if (redIcon && blackIcon) {
+                    redIcon.classList.add('slide-change-1');
+                    blackIcon.classList.add('slide-change-1');
+                }
+            },
+            slideChange: function() {
+                const redIcon = document.querySelector('.red-icon-animate');
+                const blackIcon = document.querySelector('.black-icon-animate');
+                
+                if (redIcon && blackIcon) {
+                    // Remove all previous classes
+                    redIcon.classList.remove('slide-change-1', 'slide-change-2', 'slide-change-3', 'slide-change-4', 'slide-change-5');
+                    blackIcon.classList.remove('slide-change-1', 'slide-change-2', 'slide-change-3', 'slide-change-4', 'slide-change-5');
+                    
+                    // Update slideCount based on active index
+                    let slideCount = this.realIndex + 1;
+                    
+                    // Handle loop if needed
+                    if (slideCount > 5) slideCount = 1;
+                    if (slideCount < 1) slideCount = 5;
+                    
+                    // Add the new class
+                    redIcon.classList.add(`slide-change-${slideCount}`);
+                    blackIcon.classList.add(`slide-change-${slideCount}`);
+                }
+            }
+        }
+    });
+    
+    // Initialize the heading slider with fade effect
+    const headingSlider = new Swiper(".main-slider-headings", {
+        slidesPerView: 1,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        speed: 1200,
+        loop: false,
+        allowTouchMove: false,
+    });
+
+    // Sync both sliders
+    imageSlider.controller.control = headingSlider;
+    headingSlider.controller.control = imageSlider;
+			}
 		} else {
 			console.error("Swiper is not defined. Check if swiper-bundle.min.js is loading correctly.");
 		}
