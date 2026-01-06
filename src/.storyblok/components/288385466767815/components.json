@@ -57,7 +57,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2026-01-04T15:08:03.056Z",
-    "updated_at": "2026-01-04T22:53:50.135Z",
+    "updated_at": "2026-01-06T11:28:03.672Z",
     "id": 130456301806309,
     "schema": {
       "image": {
@@ -74,6 +74,16 @@
         "type": "textarea",
         "pos": 2,
         "id": "qtlPZhV5T6SO6AdeyAeMuQ"
+      },
+      "tag": {
+        "type": "text",
+        "pos": 3,
+        "id": "OQFrG-CtSW6E83xV5o_N4w"
+      },
+      "background_image": {
+        "type": "asset",
+        "pos": 4,
+        "id": "n8HfuDfIRPu43HwdHHICMQ"
       }
     },
     "image": null,
@@ -771,6 +781,42 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "ordermonkey_ecosystem_section",
+    "component_group_uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "ordermonkey_ecosystem_slide",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-06T10:35:08.546Z",
+    "updated_at": "2026-01-06T10:36:15.329Z",
+    "id": 131097020635536,
+    "schema": {
+      "cards": {
+        "type": "bloks",
+        "pos": 2,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "cards"
+        ],
+        "component_denylist": [],
+        "id": "GBk8TSe0RkumWk8Md7x6cA"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "ordermonkey_ecosystem_slide",
     "component_group_uuid": "61f483cc-0079-4c1e-9d2f-0bb8c1cdfa03",
     "color": null,
     "icon": null,

@@ -4,7 +4,7 @@ import {
 	storyblokEditable,
 } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
-import type { smartOrderingSection as SmartOrderingSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
+import type { SmartOrderingSection as SmartOrderingSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const SmartOrderingSection = ({ blok }: { blok: SmartOrderingSectionType }) => {
 	return (

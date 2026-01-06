@@ -4,7 +4,7 @@ import {
 	storyblokEditable,
 } from "@storyblok/react/rsc";
 import parse from "html-react-parser";
-import type { ordermonkeyEcosystemSection as OrdermonkeyEcosystemSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
+import type { OrdermonkeyEcosystemSection as OrdermonkeyEcosystemSectionType } from "@/.storyblok/types/288385466767815/storyblok-components";
 
 const OrdermonkeyEcosystemSection = ({
 	blok,
