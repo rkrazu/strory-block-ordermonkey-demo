@@ -113,7 +113,7 @@ const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , h
 
 						<div>
 							<ul className="flex items-center gap-2">
-								{i18n.locales.map((locale) => (
+								{/* {i18n.locales.map((locale) => (
 									<li key={locale}>
 										<Link
 											href={pathname}
@@ -124,7 +124,9 @@ const Header = ({ burger_menu , header_button, logo}: { burger_menu?: Menu[] , h
 											{locale.toUpperCase()}
 										</Link>
 									</li>
-								))}
+								))} */}
+								<a className="white__link font-Grauna" href="/de/start" title="English">DE</a>
+								<a className="white__link font-Grauna" href="/en/start" title="Arabic">EN</a>
 							</ul>
 						</div>
 					</div>
